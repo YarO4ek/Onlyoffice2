@@ -103,8 +103,8 @@ const { createObjectCsvWriter } = require('csv-writer');
                 { id: 'CompanyName', title: 'CompanyName' },
                 { id: 'StreetAddress', title: 'StreetAddress' },
                 { id: 'AddressCountry', title: 'AddressCountry' },
-                { id: 'PostalCode', title: 'PostalCode' },
-                { id: 'Telephone', title: 'Telephone' },
+                //{ id: 'PostalCode', title: 'PostalCode' },
+                //{ id: 'Telephone', title: 'Telephone' },
             ],
         });
 
