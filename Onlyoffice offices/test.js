@@ -4,7 +4,7 @@ const assert = require('assert');
 
 describe('OnlyOffice Test', () => {
     let browser;
-    let offices = []; // Объявление переменной offices
+    let offices = [];
 
     before(async function () {
         this.timeout(10000);
@@ -16,14 +16,14 @@ describe('OnlyOffice Test', () => {
     });
 
     it('Should navigate to the OnlyOffice website', async function () {
-        this.timeout(10000); // Установите тайм-аут в 10 секунд
+        this.timeout(10000);
         await browser.url('https://www.onlyoffice.com');
         const title = await browser.getTitle();
         assert.strictEqual(title, 'ONLYOFFICE - Secure Online Office | ONLYOFFICE');
     });
 
     it('Should click on the "About" menu and navigate to "Contacts"', async function () {
-        this.timeout(10000); // Установите тайм-аут в 10 секунд
+        this.timeout(10000);
         const aboutNavItem = await browser.$('#navitem_about');
         for (let i = 0; i < 2; i++) {
             await aboutNavItem.click();
@@ -36,11 +36,11 @@ describe('OnlyOffice Test', () => {
             document.querySelector('#navitem_about_contacts').click();
         });
 
-        await browser.pause(2000); // Wait for the new page to load
+        await browser.pause(2000);
     });
 
     it('Should extract and save office data', async function () {
-        this.timeout(10000); // Установите тайм-аут в 10 секунд
+        this.timeout(10000);
         const officeElements = await browser.$$('.companydata');
 
         for (const element of officeElements) {
@@ -62,7 +62,7 @@ describe('OnlyOffice Test', () => {
             } catch (error) {
             }
 
-            // Остальные проверки аналогично...
+
 
             offices.push(officeData);
         }
@@ -71,9 +71,12 @@ describe('OnlyOffice Test', () => {
             const csvWriter = createObjectCsvWriter({
                 path: 'offices.csv',
                 header: [
-                    {id: 'Region', title: 'Region'},
-                    {id: 'CompanyName', title: 'CompanyName'},
-                    // Добавьте остальные заголовки...
+                    { id: 'Region', title: 'Region' },
+                    { id: 'CompanyName', title: 'CompanyName' },
+                    { id: 'StreetAddress', title: 'StreetAddress' },
+                    { id: 'AddressCountry', title: 'AddressCountry' },
+                    { id: 'PostalCode', title: 'PostalCode' },
+                    { id: 'Telephone', title: 'Telephone' },
                 ],
             });
 
