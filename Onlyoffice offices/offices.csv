@@ -1,10 +1,10 @@
-Region,CompanyName
-Singapore,ONLYOFFICE Capital Group Pte. Ltd.
-U.S.A.,Ascensio Systems Inc
-Latvia,Ascensio System SIA
-United Kingdom,Ascensio System Ltd
-Armenia,Ascensio Systems LLC
-Singapore,Ascensio Systems Pte. Ltd
-Uzbekistan,Ascensio System
-Serbia,Ascensio Systems d.o.o. Beograd
-Contact us,
+Region,CompanyName,StreetAddress,AddressCountry,PostalCode,Telephone
+Singapore,ONLYOFFICE Capital Group Pte. Ltd.,,"68 Circular Road, #02-01, Singapore 049422",,Phone: +65 31656735
+U.S.A.,Ascensio Systems Inc,13355 Noel Rd Suite 1100,"Dallas, TX, USA",75240,Phone: +1 (972) 301-8440
+Latvia,Ascensio System SIA,"20A-6 Ernesta Birznieka-Upish street,","Riga, Latvia, EU,",LV-1050,Phone: +371 63399867
+United Kingdom,Ascensio System Ltd,"Suite 12, 2nd Floor, Queens House,","London, United Kingdom,",W1T 7PD,Phone: +44 20 3287 1086
+Armenia,Ascensio Systems LLC,"48/2, Garegin Nzhdeh street,","Yerevan,","0026, Armenia",Phone: +374 33351015
+Singapore,Ascensio Systems Pte. Ltd,,"68 Circular Road, #02-01, Singapore 049422",,Phone: +65 31656735
+Uzbekistan,Ascensio System,"Mustakillik avenue 6/7, Mirzo-Ulugbek district","Tashkent, Uzbekistan",100000,
+Serbia,Ascensio Systems d.o.o. Beograd,"Stevana Filipovića 113, Čukarica,","Belgrade, Serbia",,Phone: + 381643506512
+Contact us,,,,,

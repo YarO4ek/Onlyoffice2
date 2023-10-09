@@ -15,32 +15,31 @@ const { createObjectCsvWriter } = require('csv-writer');
 
     await browser.url('https://www.onlyoffice.com');
 
-    // Нажать на элемент с id="navitem_about" два раза
+
     const aboutNavItem = await browser.$('#navitem_about');
     for (let i = 0; i < 2; i++) {
         await aboutNavItem.click();
     }
 
-    // Ожидание появления элемента с id="navitem_about_menu"
+
     const aboutMenu = await browser.$('#navitem_about_menu');
     await aboutMenu.waitForDisplayed();
 
-    // Используем JavaScript для нажатия на элемент с id="navitem_about_contacts"
+
     await browser.execute(() => {
         document.querySelector('#navitem_about_contacts').click();
     });
 
-    // Ожидание загрузки новой страницы
-    await browser.pause(2000); // Подождем 2 секунды (возможно, потребуется больше времени)
 
-    // Получение списка окон
+    await browser.pause(2000);
+
     const windowHandles = await browser.getWindowHandles();
     const newTabHandle = windowHandles.pop(); // Берем последнюю вкладку
 
-    // Переключение на новую вкладку
+
     await browser.switchToWindow(newTabHandle);
 
-    // Поиск информации об офисах на странице
+
     const officeElements = await browser.$$('.companydata');
 
     const offices = [];
@@ -89,7 +88,7 @@ const { createObjectCsvWriter } = require('csv-writer');
             }
         } catch (error) {}
 
-        // Добавляем офис в список, даже если не все элементы были найдены
+
         offices.push(officeData);
     }
 
@@ -103,8 +102,8 @@ const { createObjectCsvWriter } = require('csv-writer');
                 { id: 'CompanyName', title: 'CompanyName' },
                 { id: 'StreetAddress', title: 'StreetAddress' },
                 { id: 'AddressCountry', title: 'AddressCountry' },
-                //{ id: 'PostalCode', title: 'PostalCode' },
-                //{ id: 'Telephone', title: 'Telephone' },
+                { id: 'PostalCode', title: 'PostalCode' },
+                { id: 'Telephone', title: 'Telephone' },
             ],
         });
 
